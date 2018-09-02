@@ -9,13 +9,13 @@ pipeline{
 				}
 			}
 		}
-	}
-
+	
 		stage('test stage'){
 			steps {
 				withMaven(maven : 'maven3.5'){
-				sh 'mvn test'
+					sh 'mvn test'
 				}
 			}
 		}
 	}	
+}	
