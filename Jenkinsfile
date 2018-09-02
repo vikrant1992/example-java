@@ -1,21 +1,21 @@
 pipeline{
   agent any
+	tools {
+		jdk 'jdk1.7'
+		maven 'mvn3.5'
+	}
 	
 	stages{
 		stage('compile stage'){
 			steps {
-				withMaven(maven : 'maven3.5'){
 				sh 'mvn clean compile'
-				}
 			}
 		}
 	
 		stage('test stage'){
-			steps {
-				withMaven(maven : 'maven3.5'){
-					sh 'mvn test'
-				}
+			steps {	
+				sh 'mvn test'
 			}
 		}
-	}	
+	}
 }	
